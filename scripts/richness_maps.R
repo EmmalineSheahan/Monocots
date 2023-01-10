@@ -151,18 +151,23 @@ land_mask <- as_Spatial(land)
 # richness plots
 aus_richness <- calc(aus_stack, fun = sum, na.rm = T)
 aus_richness <- mask(aus_richness, land_mask)
+save(aus_richness, file = './data/aus_richness.Rdata')
 
 cal_richness <- calc(cal_stack, fun = sum, na.rm = T)
 cal_richness <- mask(cal_richness, land_mask)
+save(cal_richness, file = './data/cal_richness.Rdata')
 
 chi_richness <- calc(chi_stack, fun = sum, na.rm = T)
 chi_richness <- mask(chi_richness, land_mask)
+save(chi_richness, file = './data/chi_richness.Rdata')
 
 med_richness <- calc(med_stack, fun = sum, na.rm = T)
 med_richness <- mask(med_richness, land_mask)
+save(med_richness, file = './data/med_richness.Rdata')
 
 saf_richness <- calc(saf_stack, fun = sum, na.rm = T)
 saf_richness <- mask(saf_richness, land_mask)
+save(saf_richness, file = './data/saf_richness.Rdata')
 
 pdf('./plots/richness_Australia.pdf')
 plot(aus_richness, main = "Australia")
